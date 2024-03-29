@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Check if Docker is available
-                    bat 'sudo docker info'
+                    bat 'docker info'
                 }
             }
         }
