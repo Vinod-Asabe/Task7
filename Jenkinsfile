@@ -1,7 +1,15 @@
 pipeline {
     agent any
+	tools{
+		docker 'Docker'
+	}
+	
 
     stages {
+	    stage('Checkout'){
+		    git branch: 'main', url: 'https://github.com/Vinod-Asabe/Task7.git'
+
+	    }
         stage('Test') {
             steps {
                 script {
