@@ -1,10 +1,5 @@
 pipeline {
     agent any
-	// tools{
-	// 	docker 'Docker'
-	// }
-	
-
     stages {
 	stage('Checkout'){
 		steps{
@@ -21,7 +16,6 @@ pipeline {
                 }
             }
         }
-
         stage('Build') {
             steps {
                 script {
@@ -34,10 +28,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Run a container using the Docker image
-                    bat 'docker run -d --name my-java-container my-java-app'
-                    // Fetch the output of the java script
-		                bat 'docker logs my-java-container'
+                    	// Run a container using the Docker image
+                   	bat 'docker run -d --name my-java-container my-java-app'
+                    	// Fetch the output of the java File
+			bat 'docker logs my-java-container'
                 }
             }
         }
