@@ -6,10 +6,13 @@ pipeline {
 	
 
     stages {
-	    stage('Checkout'){
-		    git branch: 'main', url: 'https://github.com/Vinod-Asabe/Task7.git'
-
-	    }
+	stage('Checkout'){
+		steps{
+			script{
+				git branch: 'main', url: 'https://github.com/Vinod-Asabe/Task7.git'
+			}
+		}
+	}
         stage('Test') {
             steps {
                 script {
